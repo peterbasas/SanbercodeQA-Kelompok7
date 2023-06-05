@@ -1,0 +1,16 @@
+describe('Menu PIM - Employee List', () => {
+  it('Showing Employee List Successfully', () => {
+    cy.visit('https://opensource-demo.orangehrmlive.com/')
+    cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin')
+    cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123')
+    cy.get('.oxd-button').click()
+    cy.get(':nth-child(2) > .oxd-main-menu-item').click()
+    cy.get(':nth-child(6) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text').click()
+    cy.contains('IT Manager').click()
+    cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text').click()
+    cy.contains('Part-Time Contract').click()
+    cy.get(':nth-child(7) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text').click()
+    cy.contains('TechOps').click()
+    cy.get('.oxd-form-actions > .oxd-button--secondary')
+  })
+})
